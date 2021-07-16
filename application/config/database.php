@@ -48,10 +48,19 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'sonu';
-$db['default']['password'] = 'password';
-$db['default']['database'] = 'hms';
+if($_SERVER['HTTP_HOST']=="localhost")
+{
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'sonu';
+	$db['default']['password'] = 'password';
+	$db['default']['database'] = 'hms';
+
+}else{
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'admin_hms';
+	$db['default']['password'] = 'WMUtRWFVue';
+	$db['default']['database'] = 'admin_hms';
+}
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE; 
